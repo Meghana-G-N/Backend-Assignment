@@ -1,6 +1,6 @@
 import unittest
 import sqlite3
-from database import create_table, insert_email, get_unread_emails  # Ensure correct import
+from database import create_table, insert_email, get_unread_emails  
 
 class TestDatabase(unittest.TestCase):
 
