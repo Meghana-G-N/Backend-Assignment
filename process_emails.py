@@ -1,5 +1,5 @@
 import json
-import sqlite3  # Change to MySQL/PostgreSQL if needed
+import sqlite3  
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -13,19 +13,19 @@ SCOPES = ["https://www.googleapis.com/auth/gmail.modify"]
 
 CLIENT_SECRET_FILE = "credentials.json"
 # Connect to database
-DB_FILE = "emails.db"  # Change this if using MySQL/PostgreSQL
+DB_FILE = "emails.db"  
 conn = sqlite3.connect(DB_FILE)
 cursor = conn.cursor()
 
 # Load Gmail API service
 def get_gmail_service():
     creds = None
-    # Check if we have previously saved credentials
+    
     if os.path.exists("token.pickle"):
         with open("token.pickle", "rb") as token:
             creds = pickle.load(token)
 
-    # If no valid credentials are available, let the user log in.
+    
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
