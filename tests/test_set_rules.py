@@ -20,7 +20,7 @@ class TestSetRules:
           '0',                # for "Done selecting"
       ]
 
-      # Call the create_rule function (the one you want to test)
+      # Call the create_rule function 
       create_rule()
 
 
